@@ -1,0 +1,69 @@
+.abf-container {
+  height: 100%;
+  width: 100%;  
+  position: absolute;
+  background: linear-gradient(45deg, #a6e85d 7%,#40ede4 83%,#40ede4 29%,#40ede4 100%);
+}
+
+.full-height {
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+#tile {
+  width: 300px;
+  height: 300px;
+  background: green;
+}
+
+#msg {
+    text-align: center;
+    border-top: 2px dotted;
+    border-bottom: 2px dotted;
+    padding: 5px;
+    animation: zoom 1s ease-in-out alternate 2;
+    animation-fill-mode: forwards;
+}
+
+#cloud1 {
+  position: absolute;
+    top: 30px;
+    left:-300px;
+    width: 250px;
+    animation: flow 20s linear infinite;
+}
+
+#cloud2 {
+  position: absolute;
+    top: 30px;
+    left:-300px;
+    width: 250px;
+    opacity: 0;
+    animation: flow 20s linear 8s infinite;
+}
+
+@keyframes flow {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0;
+    left: 80%;
+  }
+}
+
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
+}

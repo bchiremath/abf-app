@@ -1,0 +1,24 @@
+<div *ngIf="ready">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary" [class.active]="selectedPlan==1">
+        <input type="radio" name="plan" id="option1" autocomplete="off" [value]="1" formControlName="plan" [(ngModel)]="selectedPlan">        Active
+      </label>
+      <label class="btn btn-secondary" [class.active]="selectedPlan==2">
+        <input type="radio" name="plan" id="option2" autocomplete="off" [value]="2" formControlName="plan" [(ngModel)]="selectedPlan">        Radio
+      </label>
+      <label class="btn btn-secondary" [class.active]="selectedPlan==3">
+        <input type="radio" name="plan" id="option3" autocomplete="off" [value]="3" formControlName="plan" [(ngModel)]="selectedPlan">        Radio
+      </label>
+    </div>
+
+    <br>
+    <label formArrayName="orders" *ngFor="let order of profileForm.controls.orders.controls; let i = index">
+      <input type="checkbox" [formControlName]="i"> {{orders[i].name}}
+    </label>
+
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
